@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIdCompanyToJobs extends Migration
+class AddCategoryIdToJobs extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,9 @@ class AddIdCompanyToJobs extends Migration
     public function up()
     {
         Schema::table('jobs', function (Blueprint $table) {
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('category');
 
-            $table->unsignedInteger('id_company');
-            $table->foreign('id_company')->references('id')->on('users');
         });
     }
 
@@ -28,8 +28,8 @@ class AddIdCompanyToJobs extends Migration
     public function down()
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->dropForeign(['id_company']);
-            $table->dropColumn('id_company');
+            $table->dropForeign(['category_id']);
+            $table->dropColumn('category_id');
         });
     }
 }
