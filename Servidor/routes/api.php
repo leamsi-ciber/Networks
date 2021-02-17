@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Resource
-Route::resource('jobs', 'JobsController');
+Route::resource('jobs', 'JobController');
 
 //Get specific Job detail
 
