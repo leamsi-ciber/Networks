@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Resource
+Route::resource('jobs', 'JobsController');
+
+//Get specific Job detail
+
+//Route::get('jobs/{category_id}', 'JobsController@getJobsBycategory');
+
+//Add Jobs
+
+//Route::post('createJob', 'JobsController@createJobs');
