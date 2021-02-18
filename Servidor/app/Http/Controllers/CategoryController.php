@@ -12,9 +12,15 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function showAll($id)
+    {
+        //return "Mostrando todas las categorias";
+    }
+
     public function index()
     {
-        //
+        //return  "Mostrando las diferentes categorias";
     }
 
     /**
@@ -24,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+       // return  "Mostrando el menu de categorias";
     }
 
     /**
@@ -44,9 +50,9 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(category $category)
+    public function show($id)
     {
-        //
+        //return "Mostrando la categoria con el id $id";
     }
 
     /**
@@ -55,9 +61,9 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit($id)
     {
-        //
+        //return "Creando la categoria para editar el id $id";
     }
 
     /**
@@ -67,9 +73,9 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update($id)
     {
-        //
+      //  return "Creando la categoria para actualizar el id $id";
     }
 
     /**
@@ -78,8 +84,8 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy($id)
     {
-        //
+        //return "Creando la categoria para eliminar la categoria con el id $id";
     }
 }

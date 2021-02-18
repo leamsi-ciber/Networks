@@ -5,16 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
 
-class JobsController extends Controller
+class CategoryJobsController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showAll($id)
     {
-        //
+       // return "Mostrando todas las categorias";
+    }
+    public function index($id)
+    {
+        //return  "Mostrando todas los trabajos que pertenecen a las categorias "."$id";
     }
 
     /**
@@ -22,14 +26,9 @@ class JobsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
-    }
-
-    public function showAll()
-    {
-        //
+        //return  "Mostrando formulario para trabajos que pertenecen a las categorias  "."$id";
     }
 
     /**
@@ -49,7 +48,7 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function show(Jobs $jobs)
+    public function show($idcategoria, $idjobs)
     {
         //
     }
@@ -60,9 +59,9 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jobs $jobs)
+    public function edit($idcategoria, $idjobs)
     {
-        //
+        //return "Mostrando el formulario para editar el trabajo ".$idjobs." de la categoria ".$idcategoria;
     }
 
     /**
@@ -72,9 +71,9 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jobs $jobs)
+    public function update($idcategoria, $idjobs)
     {
-        //
+        //return "Mostrando el formulario para actualizar el trabajo".$jobs."de la categoria".$categoria;
     }
 
     /**
