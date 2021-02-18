@@ -13,7 +13,17 @@ class category extends Model
         'name'
     ];
 
+
+
+    protected $hidden = [
+         'id',
+        'created_at',
+        'updated_at',
+    ];
+
     public function jobs(){
         $this->hasMany('jobs');
     }
+
+
 }

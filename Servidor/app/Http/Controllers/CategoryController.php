@@ -15,11 +15,13 @@ class CategoryController extends Controller
 
     public function showAll($id)
     {
+        
         //return "Mostrando todas las categorias";
     }
 
     public function index()
     {
+        return response()->json(category::all(), 200);
         //return  "Mostrando las diferentes categorias";
     }
 

@@ -14,7 +14,7 @@ class CategoryJobsController extends Controller
      */
     public function showAll($id)
     {
-        return response()->json(::all(), 200);
+       // return "Mostrando todas las categorias";
     }
     public function index($id)
     {
