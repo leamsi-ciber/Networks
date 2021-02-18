@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class working_day extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'type'
+    ];
+
+    public function jobs(){
+        $this->hasMany('jobs');
+    }
 }

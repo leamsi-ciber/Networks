@@ -14,7 +14,8 @@ class CreateAccountStatusesTable extends Migration
     public function up()
     {
         Schema::create('account_statuses', function (Blueprint $table) {
-            $table->id();
+            $table->increments("id");
+            $table->string('name',100);
             $table->timestamps();
         });
     }
