@@ -14,7 +14,7 @@ class CategoryJobsController extends Controller
      */
     public function showAll($id)
     {
-       // return "Mostrando todas las categorias";
+        return response()->json(::all(), 200);
     }
     public function index($id)
     {
@@ -87,3 +87,19 @@ class CategoryJobsController extends Controller
         //
     }
 }
+/* public function getJobs(){
+        return response()->json(Jobs::all(), 200);
+    }
+
+    public function getJobsByCategory($category){
+        $jobs = Jobs::find($category);
+        if(is_null($jobs)){
+            return response()->json(['message' => 'Job Not Found'], 404);
+        }
+        return response()->json($jobs::find($category), 200);
+    }
+    
+    public function createJobs(Request $request){
+        $jobs = Jobs::create($request->all());
+        return response($jobs, 201);
+    }*/
