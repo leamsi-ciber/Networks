@@ -21,7 +21,8 @@ class CreateJobsTable extends Migration
             $table->string('address',100);
             $table->longText('description');
             $table->string('apply',100);
-            $table->string('email')->unique();;
+            $table->string('email')->unique();
+            $table->string('job_category');
             $table->timestamps();
         });
     }

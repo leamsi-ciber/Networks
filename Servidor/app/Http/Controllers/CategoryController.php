@@ -32,7 +32,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-       // return  "Mostrando el menu de categorias";
+       // return  "Mostrando el menu de  cear categorias";
     }
 
     /**
