@@ -25,7 +25,12 @@ class CategoryJobsController extends Controller
              'categoria'=>$categoria,
              'jobs'=>$jobs
             ];
-      
+            if(is_null($categoria)){
+                return response()->json(['message' => 'Category Not Found'], 404);
+            }
+            else if (is_null($jobs)){
+                return response()->json(['message' => 'Job Not Found'], 404);
+            }
      return response()->json($data, 200,[]);
 
 
@@ -48,6 +53,7 @@ class CategoryJobsController extends Controller
      */
     public function create($id)
     {
+
         //return  "Mostrando formulario para trabajos que pertenecen a las categorias  "."$id";
     }
 

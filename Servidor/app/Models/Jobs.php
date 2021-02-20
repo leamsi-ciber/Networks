@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jobs extends Model
 {
     use HasFactory;
-
+  
     protected $fillable = [
         'id_company',
         'workingDay_id',
@@ -22,7 +22,7 @@ class Jobs extends Model
         'email',
         'job_category'
     ];
-
+     
     protected $hidden = [
         'id',
         'created_at',
