@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jobs;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -12,9 +13,10 @@ class JobsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($idcategoria)
     {
-        //
+      
+   
     }
 
     /**
@@ -51,7 +53,7 @@ class JobsController extends Controller
      */
     public function show(Jobs $jobs)
     {
-        //
+        
     }
 
     /**

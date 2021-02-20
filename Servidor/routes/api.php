@@ -21,5 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('category', 'CategoryController');
-Route::resource('jobs', 'JobsController',['only'=>['index','show']]);
-Route::resource('category.jobs', 'CategoryJobsController',['except'=>['show']]); 
+Route::resource('jobs', 'JobsController');
+Route::resource('category.jobs', 'CategoryJobsController'); 

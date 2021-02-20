@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jobs;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class CategoryJobsController extends Controller
@@ -12,13 +13,32 @@ class CategoryJobsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showAll($id)
+    public function showAll($idcategoria, $idjobs)
     {
-       // return "Mostrando todas las categorias";
+        
     }
     public function index($id)
     {
-        //return  "Mostrando todas los trabajos que pertenecen a las categorias "."$id";
+     $categoria = category::find($id);
+     $jobs = Jobs::find($id);
+     $data = ['success'=>true,
+             'categoria'=>$categoria,
+             'jobs'=>$jobs
+            ];
+      
+     return response()->json($data, 200,[]);
+
+
+
+
+
+       //$jobs = Jobs::find($id);
+     //if(is_null($jobs)){
+       // return response()->json(['message' => 'Job Not Found'], 404);
+    // }
+    // return response()->json($jobs::find($id), 200);
+          
+        
     }
 
     /**
@@ -48,9 +68,22 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function show($idcategoria, $idjobs)
+    public function show($idcategoria,$idjobs)
     {
-        //
+         $category = category::find($idcategoria);
+     if(is_null($category)){
+        return response()->json(['message' => 'Job Not Found'], 404);
+    }
+     return response()->json($category::find($idcategoria), 200);
+       
+       //Jobsif 
+
+      $jobs = Jobs::find($idjobs);
+
+      if(is_null($jobs)){
+        return response()->json(['message' => 'Job Not Found'], 404);
+    }
+     return response()->json($jobs::find($idjobs), 200);
     }
 
     /**
@@ -75,6 +108,8 @@ class CategoryJobsController extends Controller
     {
         //return "Mostrando el formulario para actualizar el trabajo".$jobs."de la categoria".$categoria;
     }
+
+
 
     /**
      * Remove the specified resource from storage.
