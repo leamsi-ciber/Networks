@@ -82,7 +82,7 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jobs $jobs)
+    public function destroy( $jobs)
     {
         //
     }
