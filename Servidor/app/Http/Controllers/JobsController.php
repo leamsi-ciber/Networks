@@ -44,12 +44,7 @@ class JobsController extends Controller
     {
         
         
-    if(!$request->get('id_company')|| !$request->get('workingDay_id') || !$request->get('logo') || !$request->get('Url') || !$request->get( 'position') || !$request->get('address') || !$request->get('category_id') || !$request->get('description') || !$request->get( 'apply') || !$request->get('email') || !$request->get('job_category'))
-    {
-        return response()->json(['mensaje'=>'Datos Invalidos o Incompletos','codigo'=>'422'],422);
-    }
-       Jobs::create($request->all()); 
-       return response()->json(['mensaje'=>'El trabajo ha sido creado'],202);
+
     }
 
     /**

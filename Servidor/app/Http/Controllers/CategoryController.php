@@ -43,7 +43,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        
+        if(!$request->get('name'))
+        {
+            return response()->json(['mensaje'=>'Datos Invalidos o Incompletos','codigo'=>'422'],422);
+        }
+        category::create($request->all());
+        return response()->json(['mensaje'=>'La Categoria se ha creado','codigo'=>'201'],201);
     }
 
     /**

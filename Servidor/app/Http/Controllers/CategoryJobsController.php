@@ -65,7 +65,17 @@ class CategoryJobsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        if(!$request->get('id_company')|| !$request->get('workingDay_id') || !$request->get('logo') || !$request->get('Url') || !$request->get('position') || !$request->get('address') || !$request->get('category_id') || !$request->get('description') || !$request->get('apply') || !$request->get('email') || !$request->get('job_category'))
+        {
+            return response()->json(['mensaje'=>'Datos Invalidos o Incompletos','codigo'=>'422'],422);
+        }
+        $category=category::find($request->get('category_id')); 
+        if (!$category) {
+            return response()->json(['mensaje'=>'La categoria no existe','codigo'=> '404'],404);
+        }
+
+        Jobs::create($request->all());
+        return response()->json(['mensaje'=>'El Trabajo ha sido insertado','codigo'=>'201'],201);
     }
 
     /**
