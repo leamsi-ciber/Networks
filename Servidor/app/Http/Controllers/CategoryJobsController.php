@@ -65,7 +65,7 @@ class CategoryJobsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
