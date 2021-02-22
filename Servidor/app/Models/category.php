@@ -21,7 +21,8 @@ class category extends Model
         'updated_at',
     ];
 
-    public function jobs(){
+    public function jobs()
+    {
         $this->hasMany('jobs');
     }
 

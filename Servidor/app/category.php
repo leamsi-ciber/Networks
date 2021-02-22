@@ -12,6 +12,6 @@ class category extends model {
         'updated_at'];
 
     public function Category(){
-        return $this->hasMany('App\category');
+        return $this->hasMany('App\Jobs');
     }
     }

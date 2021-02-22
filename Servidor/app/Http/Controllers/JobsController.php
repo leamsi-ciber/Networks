@@ -76,9 +76,10 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jobs $jobs)
+    public function update(Request $request, $id)
     {
-        //
+        
+    
     }
 
     /**

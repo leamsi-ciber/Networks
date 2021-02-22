@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\Jobs;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -80,9 +81,26 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request,$id)
     {
-      //  return "Creando la categoria para actualizar el id $id";
+       $metodo=$request->method();
+       $category=category::find($id);  
+       if ($metodo==="PATCH"){
+        $name=$request->get('name');
+        if ($name!=null && $name!='') {
+            $category->name=$name;
+        }
+        $category->save();
+        return "Registro editado con PATCH";
+      
+       }
+       $name=$request->get('name');
+       if (!$name) {
+           return "Error";
+       } 
+       $category->name=$name;
+       $category->save();
+       return "Grabado con Put correctamente ";
     }
 
     /**
@@ -91,7 +109,7 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         //return "Creando la categoria para eliminar la categoria con el id $id";
     }

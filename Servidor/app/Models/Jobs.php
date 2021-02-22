@@ -29,7 +29,8 @@ class Jobs extends Model
         'updated_at'
    ];
 
-    public function category(){
+    public function category()
+    {
         $this->belongsTo('category');
     }
 

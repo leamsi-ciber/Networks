@@ -63,18 +63,30 @@ class CategoryJobsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        if(!$request->get('id_company')|| !$request->get('workingDay_id') || !$request->get('logo') || !$request->get('Url') || !$request->get('position') || !$request->get('address') || !$request->get('category_id') || !$request->get('description') || !$request->get('apply') || !$request->get('email') || !$request->get('job_category'))
+        if(!$request->get('id_company')|| !$request->get('workingDay_id') || !$request->get('logo') || !$request->get('Url') || !$request->get('position') || !$request->get('address') || !$request->get('description') || !$request->get('apply') || !$request->get('email') || !$request->get('job_category'))
         {
             return response()->json(['mensaje'=>'Datos Invalidos o Incompletos','codigo'=>'422'],422);
         }
-        $category=category::find($request->get('category_id')); 
+        $category=category::find($id); 
         if (!$category) {
             return response()->json(['mensaje'=>'La categoria no existe','codigo'=> '404'],404);
         }
 
-        Jobs::create($request->all());
+        Jobs::create([
+        'id_company'=>$request->get('id_company'),
+        'workingDay_id'=>$request->get('workingDay_id'),
+        'logo'=>$request->get('logo'),
+        'Url'=>$request->get('Url'),
+        'position'=>$request->get('position'),
+        'address'=>$request->get('address'),
+        'description'=>$request->get('description'),
+        'apply'=>$request->get('apply'),
+        'email'=>$request->get('email'),
+        'job_category'=>$request->get('job_category'),
+        'category_id'=>$id
+        ]);
         return response()->json(['mensaje'=>'El Trabajo ha sido insertado','codigo'=>'201'],201);
     }
 
@@ -120,11 +132,101 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function update($idcategoria, $idjobs)
+    public function update(Request $request,$category_id, $idjobs)
     {
-        //return "Mostrando el formulario para actualizar el trabajo".$jobs."de la categoria".$categoria;
-    }
+     
+        $metodo=$request->method();
+        $categoria=category::find($category_id);  
+        if (!$categoria) 
+        {
+         return response()->json(['mensaje'=>'No se encuentra el trabajo','codigo'=>'404'],404);
+        }
+        
+        $j=$categoria->jobs()->find($idjobs);
 
+            if(!$j) 
+            {
+             return response()->json(['mensaje'=>'No se encuentra la categoria','codigo'=>'404'],404);
+            }
+
+            $logo=$request->get('logo');  
+            $Url=$request->get('Url');  
+            $position=$request->get('position');  
+            $apply=$request->get('apply');  
+            $address=$request->get('address');
+            $description=$request->get('description');
+            $email=$request->get('email'); 
+            $job_category=$request->get('job_category');
+            $workingDay_id=$request->get('workingDay_id');
+            $id_company=$request->get('id_company');
+            
+           $flag=false;
+
+        if ($metodo==="PATCH"){
+         if ($logo!=null && $logo!='') 
+         {
+             $j->logo=$logo;
+             $flag=true;
+         }
+
+         if ($workingDay_id!=null && $workingDay_id!='') 
+         {
+             $j->workingDay_id=$workingDay_id;
+             $flag=true;
+         }
+
+         if ($job_category!=null && $job_category!='') 
+         {
+             $j->job_category=$job_category;
+             $flag=true;
+         }
+         if ($email !=null && $email!='') 
+         {
+             $j->email=$email;
+             $flag=true;
+         }
+         if ($apply!=null && $apply!='') 
+         {
+             $j->apply=$apply;
+             $flag=true;
+         }
+         if ($position!=null && $position!='') 
+         {
+             $j->position=$position;
+             $flag=true;
+         }
+         if ($Url!=null && $Url!='') 
+         {
+             $j->Url=$Url;
+             $flag=true;
+         }
+         if ($id_company!=null && $id_company!='') 
+         {
+             $j->id_company=$id_company;
+             $flag=true;
+         }
+         if ($flag) {
+            $j->save();
+            return response()->json(['mensaje'=>'El Trabajo ha sido editado correctamente','codigo'=>202],202);
+         }
+         return response()->json(['mensaje'=>'No se han guardado los cambios','codigo'=>200],200);
+         
+       
+        }
+
+        if (!$id_company || $logo || $Url || $position || $apply || $email || $workingDay_id || $job_category )
+        {
+            return response()->json(['mensaje'=>'Datos Invalidos'],404);
+        } 
+    
+        $j->save();
+        return response()->json(['mensaje'=>'El Trabajo ha sido editado correctamente','codigo'=>202],202);
+
+
+
+
+        
+    }
 
 
     /**
