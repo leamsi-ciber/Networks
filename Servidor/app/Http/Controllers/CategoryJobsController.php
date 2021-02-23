@@ -26,10 +26,10 @@ class CategoryJobsController extends Controller
              'jobs'=>$jobs
             ];
             if(is_null($categoria)){
-                return response()->json(['message' => 'Category Not Found'], 404);
+                return response()->json(['message'=>'Category Not Found'], 404);
             }
             else if (is_null($jobs)){
-                return response()->json(['message' => 'Job Not Found'], 404);
+                return response()->json(['message'=>'Job Not Found'], 404);
             }
      return response()->json($data, 200,[]);
 
@@ -132,21 +132,21 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$category_id, $idjobs)
+    public function update(Request $request,$idcategoria, $idjobs)
     {
      
         $metodo=$request->method();
-        $categoria=category::find($category_id);  
+        $categoria=category::find($idcategoria);  
         if (!$categoria) 
         {
          return response()->json(['mensaje'=>'No se encuentra el trabajo','codigo'=>'404'],404);
         }
         
-        $j=$categoria->jobs()->find($idjobs);
+        $j=$categoria->Jobs()->find($idjobs);
 
             if(!$j) 
             {
-             return response()->json(['mensaje'=>'No se encuentra la categoria','codigo'=>'404'],404);
+             return response()->json(['mensaje'=>'No se encuentra el trabajo que pertenece a esta categoria','codigo'=>'404'],404);
             }
 
             $logo=$request->get('logo');  
@@ -235,9 +235,21 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $jobs)
+    public function destroy($idcategoria, $idjobs)
     {
-        //
+        $categoria=category::find($idcategoria);
+        if (!$categoria)
+        {
+        return response()->json(['message'=>'La categoria no se encuentra','codigo'=>'404'], 404);
+        }
+        $job=$categoria->jobs()->find($idjobs); 
+        if (!$job) 
+        {
+            return response()->json(['message'=>'El  trabajo no se encuentra asociado a la categoria','codigo'=>'404'], 404);
+        }
+        $job->delete();
+        return response()->json(['message'=>'El  trabajo ha sido eliminado','codigo'=>'200'], 200);
+      
     }
 }
 /* public function getJobs(){

@@ -111,6 +111,15 @@ class CategoryController extends Controller
      */
     public function destroy(Request $request,$id)
     {
-        //return "Creando la categoria para eliminar la categoria con el id $id";
+        $categoria=category::find($id);
+        if (!$categoria)
+        {
+        return response()->json(['message'=>'La categoria no se encuentra','codigo'=>'404'], 404);
+        }
+        $jobs->$categoria->jobs;
+        if (sizeof($jobs)>0) 
+        {
+        return response()->json(['message'=>'La categoria no se encuentra','codigo'=>'404'], 404);
+        }
     }
 }
