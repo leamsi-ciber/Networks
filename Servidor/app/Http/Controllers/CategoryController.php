@@ -109,17 +109,8 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id)
+    public function destroy($idcategorias)
     {
-        $categoria=category::find($id);
-        if (!$categoria)
-        {
-        return response()->json(['message'=>'La categoria no se encuentra','codigo'=>'404'], 404);
-        }
-        $jobs->$categoria->jobs;
-        if (sizeof($jobs)>0) 
-        {
-        return response()->json(['message'=>'La categoria no se encuentra','codigo'=>'404'], 404);
-        }
+        $categoria=category::findOrFail($idcategorias);
     }
 }

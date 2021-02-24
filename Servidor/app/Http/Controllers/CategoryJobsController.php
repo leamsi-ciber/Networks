@@ -252,14 +252,12 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idcategoria, $idjobs)
+    public function destroy(Request $request,$idcategoria,$idjobs)
     {
         //get Job
-        $job=create_post_table::findOrFail($idjobs);
-        //delete Job
-    if($job->delete()){
-      return new Post($job);
-    }
+       $job=jobs::findOrFail($idjobs);
+       //delete Job
+  
 }
 /* public function getJobs(){
         return response()->json(Jobs::all(), 200);
@@ -275,5 +273,5 @@ class CategoryJobsController extends Controller
     
     public function createJobs(Request $request){
         $jobs = Jobs::create($request->all());
-        return response($jobs, 201);
-    }*/
+        return response($jobs, 201);*/
+    }

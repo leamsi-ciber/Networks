@@ -88,8 +88,11 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jobs $jobs)
+    public function destroy(Jobs $idjobs)
     {
-        //
+        //get Job
+       $job=Jobs::findOrFail($idjobs);
+       //delete Job
+ 
     }
 }
