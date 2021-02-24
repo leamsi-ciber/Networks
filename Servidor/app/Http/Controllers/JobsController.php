@@ -15,7 +15,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-      return response()->json(['datos'=>Category::all()],202);
+      return response()->json(['datos'=>Jobs::all()],202);
     }
 
     /**

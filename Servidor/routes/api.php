@@ -21,10 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Resource
 Route::resource('jobs', 'JobController');
 
-//Get specific Job detail
-
-//Route::get('jobs/{category_id}', 'JobsController@getJobsBycategory');
-
-//Add Jobs
-
-//Route::post('createJob', 'JobsController@createJobs');
+Route::resource('category', 'CategoryController');
+Route::resource('jobs', 'JobsController');
+Route::resource('category.jobs', 'CategoryJobsController'); 

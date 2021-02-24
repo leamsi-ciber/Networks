@@ -132,17 +132,17 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$category_id, $idjobs)
+    public function update(Request $request, $idjobs)
     {
      
         $metodo=$request->method();
-        $categoria=category::find($category_id);  
+        $categoria=Jobs::find($idjobs);  
         if (!$categoria) 
         {
          return response()->json(['mensaje'=>'No se encuentra el trabajo','codigo'=>'404'],404);
         }
         
-        $j=$categoria->jobs()->find($idjobs);
+        $j=$categoria;
 
             if(!$j) 
             {
@@ -158,6 +158,7 @@ class CategoryJobsController extends Controller
             $email=$request->get('email'); 
             $job_category=$request->get('job_category');
             $workingDay_id=$request->get('workingDay_id');
+            $category_id=$request->get('category_id');
             $id_company=$request->get('id_company');
             
            $flag=false;
@@ -205,6 +206,21 @@ class CategoryJobsController extends Controller
              $j->id_company=$id_company;
              $flag=true;
          }
+         if ($address!=null && $address!='') 
+         {
+             $j->address=$address;
+             $flag=true;
+         }
+         if ($description!=null && $description!='') 
+         {
+             $j->description=$description;
+             $flag=true;
+         }
+         if ($category_id!=null && $category_id!='') 
+         {
+             $j->category_id=$category_id;
+             $flag=true;
+         }
          if ($flag) {
             $j->save();
             return response()->json(['mensaje'=>'El Trabajo ha sido editado correctamente','codigo'=>202],202);
@@ -237,7 +253,7 @@ class CategoryJobsController extends Controller
      */
     public function destroy( $jobs)
     {
-        //
+        
     }
 }
 /* public function getJobs(){

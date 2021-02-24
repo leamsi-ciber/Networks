@@ -23,8 +23,7 @@ class category extends Model
 
     public function jobs()
     {
-        $this->hasMany('jobs');
+        $this->hasMany('App\Jobs');
     }
-
 
 }

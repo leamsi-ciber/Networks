@@ -13,7 +13,7 @@ class working_day extends Model
         'type'
     ];
 
-    public function jobs(){
-        $this->hasMany('jobs');
-    }
+  /*  public function jobs(){
+        $this->hasMany('Jobs');
+    }*/
 }
