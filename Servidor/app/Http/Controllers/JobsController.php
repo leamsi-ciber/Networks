@@ -93,6 +93,7 @@ class JobsController extends Controller
      $jobs=Jobs::find($idjobs);
      if($jobs){
         $jobs->delete();
+        return 'El trabajo se ha eliminado con exito';
         }
 
    
