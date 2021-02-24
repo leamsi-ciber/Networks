@@ -31,10 +31,10 @@ class Jobs extends Model
 
     public function category()
     {
-        $this->belongsTo('category');
+        $this->belongsTo('App\category');
     }
 
     public function working_id(){
-        $this->belongsTo('working_day');
+        $this->belongsTo('App\working_day');
     }
 }

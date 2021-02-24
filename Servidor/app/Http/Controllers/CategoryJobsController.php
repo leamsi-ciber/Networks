@@ -132,17 +132,17 @@ class CategoryJobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$idcategoria, $idjobs)
+    public function update(Request $request,$category_id,$idjobs)
     {
      
         $metodo=$request->method();
-        $categoria=category::find($idcategoria);  
+        $categoria=Jobs::find($idjobs);  
         if (!$categoria) 
         {
          return response()->json(['mensaje'=>'No se encuentra el trabajo','codigo'=>'404'],404);
         }
         
-        $j=$categoria->Jobs()->find($idjobs);
+        $j=$categoria->category()->find($category_id);
 
             if(!$j) 
             {
@@ -159,7 +159,8 @@ class CategoryJobsController extends Controller
             $job_category=$request->get('job_category');
             $workingDay_id=$request->get('workingDay_id');
             $id_company=$request->get('id_company');
-            
+            $category_id=$request->get('category_id');
+
            $flag=false;
 
         if ($metodo==="PATCH"){
@@ -203,6 +204,11 @@ class CategoryJobsController extends Controller
          if ($id_company!=null && $id_company!='') 
          {
              $j->id_company=$id_company;
+             $flag=true;
+         }
+         if ($category_id!=null && $category_id!='') 
+         {
+             $j->category_id=$category_id;
              $flag=true;
          }
          if ($flag) {
