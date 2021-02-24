@@ -254,7 +254,11 @@ class CategoryJobsController extends Controller
      */
     public function destroy($idcategoria, $idjobs)
     {
-        
+        //get Job
+        $job=create_post_table::findOrFail($idjobs);
+        //delete Job
+    if($job->delete()){
+      return new Post($job);
     }
 }
 /* public function getJobs(){
