@@ -109,8 +109,12 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id)
+    public function destroy($id)
     {
-        //return "Creando la categoria para eliminar la categoria con el id $id";
+        $job=category::findOrFail($id);
+        //delete Job
+    if($job->delete()){
+      return 'Well Done the Category is Eliminated';
+    }
     }
 }
