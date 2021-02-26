@@ -15,7 +15,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-      return response()->json(['datos'=>Jobs::all()],202);
+      return response()->json(Jobs::all(),202);
     }
 
     /**
@@ -53,8 +53,29 @@ class JobsController extends Controller
      * @param  \App\Models\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function show(Jobs $jobs)
+    public function show( $category)
     {
+
+
+        $jobs=Jobs::orderBy('created_at', 'DESC')->where(['category_id'=>$category])->paginate(20);
+        return response()->json($jobs);
+
+
+
+
+        // $categoria = category::find($jobs);
+        // $jobs = Jobs::find($jobs);
+        // $data = array(['success'=>true,
+        //         'categoria'=>$categoria,
+        //         'jobs'=>$jobs
+        //        ]);
+        //        if(is_null($categoria)){
+        //            return response()->json(['message' => 'Category Not Found'], 404);
+        //        }
+        //        else if (is_null($jobs)){
+        //            return response()->json(['message' => 'Job Not Found'], 404);
+        //        }
+        // return response()->json($data, 200,[]);
         
     }
 
