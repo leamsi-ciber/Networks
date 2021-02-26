@@ -894,7 +894,6 @@
         },
         {
             "name": "laravel/framework",
-<<<<<<< HEAD
             "version": "v8.29.0",
             "source": {
                 "type": "git",
@@ -905,18 +904,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/d2eba352b3b3a3c515b18c5726b373fe5026733e",
                 "reference": "d2eba352b3b3a3c515b18c5726b373fe5026733e",
-=======
-            "version": "v8.28.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "73dd43d92fcde6c6abc00658ae33391397ca119d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/73dd43d92fcde6c6abc00658ae33391397ca119d",
-                "reference": "73dd43d92fcde6c6abc00658ae33391397ca119d",
->>>>>>> origin/Ismael
                 "shasum": ""
             },
             "require": {
@@ -1071,11 +1058,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-<<<<<<< HEAD
             "time": "2021-02-23T14:27:41+00:00"
-=======
-            "time": "2021-02-16T18:07:44+00:00"
->>>>>>> origin/Ismael
         },
         {
             "name": "laravel/tinker",
@@ -5380,7 +5363,6 @@
         },
         {
             "name": "laravel/sail",
-<<<<<<< HEAD
             "version": "v1.4.3",
             "source": {
                 "type": "git",
@@ -5391,18 +5373,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/0200ce6e0f697699bce036c42d91f1daab8039a8",
                 "reference": "0200ce6e0f697699bce036c42d91f1daab8039a8",
-=======
-            "version": "v1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/sail.git",
-                "reference": "a18519e96c32894ac3f8775fa8eb6de5750aca5a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/a18519e96c32894ac3f8775fa8eb6de5750aca5a",
-                "reference": "a18519e96c32894ac3f8775fa8eb6de5750aca5a",
->>>>>>> origin/Ismael
                 "shasum": ""
             },
             "require": {
@@ -5449,11 +5419,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-<<<<<<< HEAD
             "time": "2021-02-24T21:20:16+00:00"
-=======
-            "time": "2021-02-09T16:44:58+00:00"
->>>>>>> origin/Ismael
         },
         {
             "name": "mockery/mockery",
