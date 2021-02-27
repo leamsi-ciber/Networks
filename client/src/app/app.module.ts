@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-<<<<<<< HEAD
-=======
 import {RouterModule, Routes} from '@angular/router';
 
 
->>>>>>> origin/Ismael
 import { AppComponent } from './app.component';
+import { VacanteComponent } from './components/vacante/vacante.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -30,7 +28,8 @@ const appRoutes: Routes = [
     JobsComponent,
     NavbarComponent,
     FooterComponent,
-    Category1Component
+    Category1Component,
+    VacanteComponent
   ],
   imports: [
     BrowserModule,

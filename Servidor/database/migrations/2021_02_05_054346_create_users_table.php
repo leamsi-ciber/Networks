@@ -14,17 +14,6 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-<<<<<<< HEAD:Servidor/database/migrations/2021_02_05_054346_create_users_table.php
-           
-            $table->increments('id');
-            $table->string('name', 20);
-            //$table->timestamp('email_verified_at')->nullable();
-            $table->string('password', 30);
-            $table->string('email', 30)->unique();
-            //$table->unsignedInteger('profession_id');
-            //$table->rememberToken();
-            //$table->timestamps();
-=======
             $table->increments("id");
             $table->string('name');
             $table->string('email')->unique();
@@ -32,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
->>>>>>> origin/Ismael:Servidor/database/migrations/2014_10_12_000000_create_users_table.php
         });
     }
 
