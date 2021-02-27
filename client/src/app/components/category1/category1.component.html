@@ -17,7 +17,7 @@
                 <td>
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">{{ cat.address }}</span>
+                      <span [routerLink]="['/jobs', cat.category_id]" class="mb-0 text-sm">{{ cat.address }}</span>
                     </div>
                   </div>
                 </td>
@@ -43,7 +43,7 @@
 
 <!-- pagination -->
 
-        <div class="card-footer py-4">
+        <!-- <div class="card-footer py-4">
           <nav aria-label="...">
             <ul class="pagination justify-content-end mb-0">
               <li class="page-item disabled">
@@ -70,4 +70,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->

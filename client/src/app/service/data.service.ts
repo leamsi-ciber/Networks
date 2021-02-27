@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  constructor(private httpClient:HttpClient) { }
-
-  getData(){
-    return this.httpClient.get('http://127.0.0.1:8000/api/jobs')
-  }
+  constructor(private httpClient:HttpClient) { 
+}
+getData(){
+  return this.httpClient.get('http://127.0.0.1:8000/api/jobs?category_id=1')
+}
 }

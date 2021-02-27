@@ -15,7 +15,8 @@ class JobsController extends Controller
      */
     public function index()
     {
-      return response()->json(Jobs::all(),202);
+        $jobs=Jobs::all();
+      return response()->json($jobs,202);
     }
 
     /**
@@ -57,9 +58,11 @@ class JobsController extends Controller
     {
 
 
-        $jobs=Jobs::orderBy('created_at', 'DESC')->where(['category_id'=>$category])->paginate(20);
-        return response()->json($jobs);
+       //get Job by category
+       $jobs=Jobs::orderBy('created_at', 'DESC')->where(['category_id'=>$category ])->paginate(10);
 
+       //return jobs of that category
+        return response()->json($jobs,202);
 
 
 

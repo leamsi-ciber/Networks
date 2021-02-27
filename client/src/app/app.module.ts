@@ -14,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
-  {path: '', component:Category1Component}
+  {path: 'jobs/id', component:Category1Component}
+
 ];
 
 
