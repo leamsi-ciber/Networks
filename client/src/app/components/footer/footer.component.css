@@ -1,7 +1,4 @@
-#titulo{
-    text-align: center;
-}
-h4{
+footer{
     background: -webkit-linear-gradient(left top,  #8E73C7
     ,  darkgrey ); /* For Safari 5.1 to 6.0 /
   background: -o-linear-gradient(bottom right,  #8339b2
@@ -10,10 +7,4 @@ h4{
   ,  #5d277f ); / For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right,  #8339b2
   ,  darkgrey );
-  color: white;
-    /* color:#452B7C; */
-    font-style: bold;
-}
-.btn-outline-jesus{
-    background-color: #8E73C7;
 }

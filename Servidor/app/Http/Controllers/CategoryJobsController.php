@@ -31,7 +31,7 @@ class CategoryJobsController extends Controller
             else if (is_null($jobs)){
                 return response()->json(['message' => 'Job Not Found'], 404);
             }
-     return response()->json($data, 200,[]);
+     return response()->json($data, 200);
 
 
 
