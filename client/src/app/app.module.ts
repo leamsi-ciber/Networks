@@ -10,11 +10,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { Category1Component } from './components/category1/category1.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
 
 
 
 const appRoutes: Routes = [
-  {path: '', component:Category1Component}
+  {path: 'vacantes', component:Category1Component},
+  {path: 'Login', component:LoginComponent}
 ];
 
 
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     JobsComponent,
     NavbarComponent,
     FooterComponent,
-    Category1Component
+    Category1Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
