@@ -1,0 +1,17 @@
+footer{
+    /* background: -webkit-linear-gradient(left top,  #8E73C7
+    ,  darkgrey ); /* For Safari 5.1 to 6.0 /
+  background: -o-linear-gradient(bottom right,  #8339b2
+  ,  #5d277f ); / For Opera 11.1 to 12.0 /
+  background: -moz-linear-gradient(bottom right,  #8339b2
+  ,  #5d277f ); / For Firefox 3.6 to 15 *//*
+  background: linear-gradient(to bottom right,  #8339b2
+  ,  darkgrey ); */
+
+  color: darkgrey;
+  font-family: 'Ubuntu', sans-serif;
+  font-size:18px;
+}
+a{
+  color: darkgrey;
+}

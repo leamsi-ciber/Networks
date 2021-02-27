@@ -19,8 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Resource
-Route::resource('jobs', 'JobController');
 
 Route::resource('category', 'CategoryController');
 Route::resource('jobs', 'JobsController');
 Route::resource('category.jobs', 'CategoryJobsController'); 
+
+//Get
+Route::get('api/category/{id}/jobs', 'CategoryJobsController@index');  
+// Route::get('api/jobs/{id}/category', 'JobsController@show');  

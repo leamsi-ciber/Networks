@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\category as AppCategory;
 use App\Models\Jobs;
 use App\Models\category;
 use Illuminate\Http\Request;
@@ -19,20 +20,21 @@ class CategoryJobsController extends Controller
     }
     public function index($id)
     {
-     $categoria = category::find($id);
-     $jobs = Jobs::find($id);
-     $data = ['success'=>true,
-             'categoria'=>$categoria,
-             'jobs'=>$jobs
-            ];
-            if(is_null($categoria)){
-                return response()->json(['message' => 'Category Not Found'], 404);
+    
+        $categoria = category::find($id);
+        $jobs = Jobs::find($id);
+        $data = ['success'=>true,
+                'categoria'=>$categoria,
+                'jobs'=>$jobs
+               ];
+               if(is_null($categoria)){
+                   return response()->json(['message' => 'Category Not Found'], 404);
+               }
+               else if (is_null($jobs)){
+                   return response()->json(['message' => 'Job Not Found'], 404);
+               }
+        return response()->json($data, 200);
             }
-            else if (is_null($jobs)){
-                return response()->json(['message' => 'Job Not Found'], 404);
-            }
-     return response()->json($data, 200,[]);
-
 
 
 
@@ -44,7 +46,6 @@ class CategoryJobsController extends Controller
     // return response()->json($jobs::find($id), 200);
           
         
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -98,22 +99,20 @@ class CategoryJobsController extends Controller
      */
     public function show($idcategoria,$idjobs)
     {
-         $category = category::find($idcategoria);
-     if(is_null($category)){
-        return response()->json(['message' => 'Job Not Found'], 404);
-    }
-     return response()->json($category::find($idcategoria), 200);
-       
-       //Jobsif 
-
-      $jobs = Jobs::find($idjobs);
-
-      if(is_null($jobs)){
-        return response()->json(['message' => 'Job Not Found'], 404);
-    }
-     return response()->json($jobs::find($idjobs), 200);
-    }
-
+        $categoria = category::find($idcategoria);
+        $jobs = Jobs::find($idjobs);
+        $data = ['success'=>true,
+                'categoria'=>$categoria,
+                'jobs'=>$jobs
+               ];
+               if(is_null($categoria)){
+                   return response()->json(['message' => 'Category Not Found'], 404);
+               }
+               else if (is_null($jobs)){
+                   return response()->json(['message' => 'Job Not Found'], 404);
+               }
+        return response()->json($data, 200);
+            }
     /**
      * Show the form for editing the specified resource.
      *
