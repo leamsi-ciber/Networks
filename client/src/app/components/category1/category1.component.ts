@@ -10,7 +10,9 @@ export class Category1Component implements OnInit {
 
   category1:any;
 
-  constructor(private dataService:DataService) { }
+  constructor(private dataService:DataService) {
+  
+  }
 
   ngOnInit(): void {
     this.getCategory1Data();
@@ -18,7 +20,7 @@ export class Category1Component implements OnInit {
 
   getCategory1Data(){
     this.dataService.getData().subscribe(res => {
-      console.log(res);
+      this.category1 = res;
     });
   }
 
