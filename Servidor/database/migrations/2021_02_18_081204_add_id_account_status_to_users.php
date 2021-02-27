@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProfessionIdToUsers extends Migration
+class AddIdAccountStatusToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,8 @@ class AddProfessionIdToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-
-           $table->unsignedInteger('profession_id');
-           $table->foreign('profession_id')->references('id')->on('professions');
-
+            $table->unsignedInteger('id_accountStatus');
+            $table->foreign('id_accountStatus')->references('id')->on('account_statuses');
         });
     }
 
@@ -29,10 +27,8 @@ class AddProfessionIdToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            
-            $table->dropForeign(['profession_id']);
-            $table->dropColumn('profession_id');
-        
+            $table->dropForeign(['id_accountStatus']);
+            $table->dropColumn('id_accountStatus');
         });
     }
 }
