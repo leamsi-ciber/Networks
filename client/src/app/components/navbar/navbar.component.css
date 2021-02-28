@@ -1,9 +1,10 @@
 .navbar-brand{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 h2{
-  color: #8E73C7;
+  color: #381f6d;
   font-size: 50px;
+  
 }
  
 .nav-link:hover{
@@ -28,7 +29,7 @@ li{
   background: -o-linear-gradient(bottom right,  #8339b2
   ,  #5d277f ); / For Opera 11.1 to 12.0 /
   background: -moz-linear-gradient(bottom right,  #8339b2
-  ,  #5d277f ); / For Firefox 3.6 to 15 *//*
+  ,  #5d277f ); / For Firefox 3.6 to 15 //
   background: linear-gradient(to bottom right,  #8339b2
   ,  #5d277f );
 } */
