@@ -1,4 +1,6 @@
+import { DataService } from './../../service/data.service';
 import { Component, OnInit } from '@angular/core';
+//import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-vacante',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vacante.component.css']
 })
 export class VacanteComponent implements OnInit {
-
-  constructor() { }
+  vacantes:any;
+  constructor(private DataService:DataService) { }
 
   ngOnInit(): void {
+
+    this.getVacanteDate();
   }
 
+    getVacanteDate(){
+      this.DataService.getData().subscribe(res => {
+        this.vacantes = res;
+      });
+      
+    }
 }

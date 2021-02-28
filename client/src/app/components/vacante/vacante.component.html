@@ -68,9 +68,9 @@
           <div class="row g-0">
             <div class="col-md-7">
               <div class="card-body">
-                <h5 class="card-title bg-primary" style="max-width: 75%;">Claro RD</h5>
-                <h5 class="card-title text-black-50 te">SANTO DOMINGO, DISTRITO NACIONAL</h5>
-                <p class="card-text">tenemos un puesto para programar weba distinta (Minimo 1 año de experiencia)</p>
+                <h5 class="card-title bg-primary" style="max-width: 75%;" *ngFor = "let emp of vacantes">{{emp.id}} {{emp.logo}}</h5>
+                <h5 class="card-title text-black-50 te" *ngFor = "let emp of vacantes"> {{emp.id}} {{emp.andress}} </h5>
+                <p class="card-text" *ngFor = "let emp of vacantes">tenemos un puesto para {{emp.id}} {{emp.position}}  (Minimo 1 año de experiencia)</p>
                   <h5>Habilidades requeridas:</h5> 
 
                   <ul>
@@ -79,7 +79,7 @@
                     <li>Proyecto</li>
                   </ul>
 
-                  <p class="card-text">- Favor no aplicar si no cumple con los requisitos interesados enviar CV a <span><link rel="stylesheet" href=""></span></p>
+                  <p class="card-text" *ngFor = "let emp of vacantes"> {{emp.id}} {{emp.description}} <span><link rel="stylesheet" href=""></span></p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
@@ -92,3 +92,5 @@
     </div>
 
   </body>
+
+<!--Favor no aplicar si no cumple con los requisitos interesados enviar CV a -->
