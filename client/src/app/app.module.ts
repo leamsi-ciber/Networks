@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { Category1Component } from './components/category1/category1.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     FooterComponent,
     Category1Component,
-    VacanteComponent
+    VacanteComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
