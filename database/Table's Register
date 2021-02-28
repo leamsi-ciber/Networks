@@ -1,0 +1,184 @@
+/*REGISTERS*/
+/*CATEGORIES TABLE*/
+Select * from  categories;
+insert into categories (id, name) values (1,'Marketing');
+insert into categories (id, name) values (2,'Programming');
+insert into categories (id, name) values (3,'accounting');
+insert into categories (id, name) values (4,'Human Resources');
+Update categories set name = 'Accounting' where id = 3 ;
+
+/*USERS TABLE*/
+select * from Users;
+insert into Users (id,name,email,password, id_accountStatus) values (1,'Claro','Claro@gmail.com',123123,2);
+insert into Users (id,name,email,password, id_accountStatus) values (2,'Altice','Altice@gmail.com',123456,2);
+insert into Users (id,name,email,password, id_accountStatus) values (3,'Fostertech','Fostertech@gmail.com',321321,2);
+insert into users (id,name,email,password, id_accountStatus) values (4,'Viva','Viva@gmail.com',654321,2);
+insert into users (id,name,email,password, id_accountStatus) values (5,'Newtech','Newtech@gmail.com',111222,2);
+insert into users (id,name,email,password, id_accountStatus) values (6,'Ikea','Ikea@gmail.com',333221 ,2);
+insert into users (id,name,email,password, id_accountStatus) values (7,'Mapfre','Mapfre@gmail.com',222111,2);
+insert into users (id,name,email,password, id_accountStatus) values (8,'Nestlé','Nestle@gmail.com',123124,2);
+insert into users (id,name,email,password, id_accountStatus) values (9,'Ambev','Ambev@gmail.com',123125,2);
+insert into users (id,name,email,password, id_accountStatus) values (10,'GBH','Gbh@gmail.com',123126,2);
+insert into users (id,name,email,password, id_accountStatus) values (11,'Amadita','Amadita@gmail.com',123127,2);
+insert into users (id,name,email,password, id_accountStatus) values (12,'Grupo Ramos','GrupoRamos@gmail.com',123127,2);
+insert into users (id,name,email,password, id_accountStatus) values (13,'Grupo Corripio','GrupoCorripio@gmail.com',123129,2);
+insert into users (id,name,email,password, id_accountStatus) values (14,'Sky','Sky@gmail.com',123121,2);
+insert into users (id,name,email,password, id_accountStatus) values (15,'Aster','Aster@gmail.com',123122,2);
+update Users set password = 123128 where id = 12;
+
+/*JOBS TABLE*/
+describe jobs;
+
+alter table jobs drop index jobs_email_unique;
+
+Select * from  jobs;
+/*REGISTRO DE LA TABLA JOBS DESDE EL 1 AL 100*/
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(1,'Claro','Claro.com','Encargado de Ventas','Santo Domingo Este','Solicitamos persona capaz de administrar las ventas de productos y servicios ofrecida por la empresa.','Enviar cv','Claro@gmail.com','Accounting',NULL,NULL,1,3,1),
+(2,'Altice','Altice.com','Encargado de Marketing ','Santo Domingo Este','Se necesita profesional encargado de promocionar a traves de las redes nuestros productos.','Enviar cv','Altice@gmail.com','Marketing',NULL,NULL,2,1,1);
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(3,'Viva','Viva.com','Auxiliar de Recursos Humanos','Santo Domingo Oeste','Brindar soporte en los procesos llevados a cabo en el Dept. de recursos humanos. ','Enviar cv','Viva@gmail.com','Human Resources',NULL,NULL,3,4,1);
+ insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(4,'Fortestech','Fortestech.com','Gerente de Contabilidad','Santo Domingo Norte','Necesitamos profesional en contabilidad que se encargue de los registros contables.','Enviar cv','Fortestech@gmail.com','Accounting',NULL,NULL,3,3,2),
+ (5,'Nestle','Nestle.com','Analista de software','Santo Domingo Oeste','Se solicita persona con Experiencia como analista de software, conocimientos de sistemas BPMN y de estructura de datos.','Enviar cv','Nestle@gmail.com','Programming',NULL,NULL,8,2,1);
+ insert into jobs 
+ values(6,'Newtech','newtech.com','Auxiliar de Recursos Humanos','Santo Domingo Este','Trabajar en actualizacion de expedientes de personal.Asistir en funciones genericas del departamento.','Enviar cv','newtech@gmail.com','Accounting',NULL,NULL,5,3,1),
+(7,'Ambev','Ambev.com','Encargado de Marketing Digital','Santo Domingo Oeste','Solicitamos una persona que se encargue de manejar de redes sociales y nuestras marcas en la web.','Enviar cv','Ambev@gmail.com','Marketing',NULL,NULL,9,1,1);
+ insert into jobs values
+(8,'Mapfre','Mapfre.com','Desarrollador Web','Santo Domingo Norte','Conocimientos informaticos: Manejo de base de datos y lenguajes de programacion','Enviar cv','Mapfre@gmail.com','Programming',NULL,NULL,7,2,2),
+(9,'Ikea','Ikea.com','Analista de Costos','Santo Domingo Norte','Realizar cierres mensuales los cuales incluyen: conciliacion de ventas, determinacion de ventas por proyectos.','Enviar cv','Ikea@gmail.com','Accounting',NULL,NULL,6,3,2),
+(10,'GBH','GBH.com','Encargado de Recursos Humanos','Santo Domingo Este','Solicitamos persona responsable de la administracion de estrategias que garantice la mejora de subsistemas de RRHH de la empresa.','Enviar cv','gbh@gmail.com','Human Resources',NULL,NULL,3,4,2);
+insert into jobs values
+(11,'Claro','Claro.com','Encargado de Reclutamiento','Santo Domingo Este','Asistir a los reclutadores en las labores de reclutamiento y seleccion del nuevo personal.','Enviar cv','Claro@gmail.com','Marketing',NULL,NULL,3,1,1),
+(12,'Nestle','Nestle.com','Analista de Software','Santo Domingo Oeste','Se necesita personal que implemente y actualize los sistemas ERP en las empresas clientes.','Enviar cv','Nestle@gmail.com','Programming',NULL,NULL,3,2,1),
+(13,'Viva','Viva.com','Desarrollador de aplicaciones C#.Net','Santo Domingo Oeste','Como desarrollador usted sera responsable del diseño, desarrollo y soporte de las aplicaciones basadas en C#.','Enviar cv','Viva@gmail.com','Programming',NULL,NULL,4,2,1);
+insert into jobs values
+(14,'Fostertech','Fostertech.com','Secretaria','Santo Domingo Norte','Buen conocimiento y manejo en computacion.,','Enviar cv','Fostertech@gmail.com','Accounting',NULL,NULL,3,3,2),
+(15,'Newtech','Newtech.com','Asistente de Contabilidad','Santo Domingo Oeste','Debe ser estudiante de contabilidad y manejar excel y word.','Enviar cv','Newtech@gmail.com','Accounting',NULL,NULL,3,3,1),
+(16,'Mapfre','Mapfre.com','Asistente de Gestion Humana','Santo Domingo Este','Asistir en funciones del departamento. Proactiva, Dinamica','Enviar cv','Mapfre@gmail.com','Human Resources',NULL,NULL,7,4,2),
+(17,'Ambev','Ambev.com','Analista de Recursos Humanos','Santo Domingo Oeste','Solicitamos persona responsable de brindar en los requerimientos del personal','Enviar cv','Ambev@gmail.com','Human Resources',NULL,NULL,9,4,1),
+(18,'Altice','Altice.com','Auditor Interno','Santo Domingo Norte','Solicitamos persona responsable en la organizacion del asesoramiento, apoyo profesional y tecnico en materias de control interno. ','Enviar cv','Altice@gmail.com','Accounting',NULL,NULL,2,3,1);
+insert into jobs values
+(19,'Viva','Viva.com','Desarrollador Senior','Santo Domingo Oeste','Solicitamos desarrollador capaz de analizar aplicaciones c#,C++,ASPnet.','Enviar cv','Viva@gmail.com','Programming',NULL,NULL,4,2,2),
+(20,'Ikea','Ikea.com','Community Manager','Santo Domingo Este','Publicar y gestionar el contenido de redes sociales, creando planes estrategicos.','Enviar cv','Ikea@gmail.com','Marketing',NULL,NULL,6,1,1);
+insert into jobs values
+(21,'Fostertech','Fostertech.com','Secretaria','Santo Domingo Norte','Se solicita una secretaria con conocimientos basicos de contabilidad.' ,'Enviar cv','Fostertech@gmail.com','Accounting',NULL,NULL,3,3,2),
+(22,'Newtech','Newtech.com','Asistente de Contabilidad','Santo Domingo Oeste','Se necesita asistente de contabilidad para laborar Newtech','Enviar cv','Newtech@gmail.com','Accounting',NULL,NULL,3,3,1);
+insert into jobs values
+(23,'Amadita','Amadita.com','Asistente de servicio al cliente','Santo Domingo Este','Se necesita asistente de servicio al cliente proactiva,dinamica, dedicada','Enviar cv','Amadita@gmail.com','Accounting',NULL,NULL,11,3,2),
+(24,'Grupo Ramos','GrupoRamos.com','Asistente de Marketing','Santo Domingo Oeste','Se necesita asistente de marketing, debe dominar los fundamentos básicos del marketing','Enviar cv','GrupoRamos@gmail.com','Marketing',NULL,NULL,12,1,1),
+(25,'Mapfre','Mapfre.com','Asistente de Contabilidad','Santo Domingo Norte','Se necesita asistente de contabilidad que registre los libros contables y conciliacion bancaria','Enviar cv','Mapfre@gmail.com','Accounting',NULL,NULL,7,3,2);
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(26,'Altice','Altice.com','Encargado de Ventas','Santo Domingo Oeste','Solicitamos persona capaz de administrar las ventas de productos y servicios ofrecida por la empresa.','Enviar cv','Altice@gmail.com','Accounting',NULL,NULL,2,3,2),
+(27,'Viva','Viva.com','Encargado de Marketing ','Santo Domingo Este','Se necesita profesional encargado de promocionar a traves de las redes nuestros productos.','Enviar cv','Viva@gmail.com','Marketing',NULL,NULL,4,1,1);
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(28,'Newtech','Newtech.com','Auxiliar de Recursos Humanos','Santo Domingo Oeste','Brindar soporte en los procesos llevados a cabo en el Dept. de recursos humanos. ','Enviar cv','Newtech@gmail.com','Human Resources',NULL,NULL,5,4,2);
+ insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(29,'Sky','Sky.com','Gerente de Contabilidad','Santo Domingo Norte','Necesitamos profesional en contabilidad que se encargue de los registros contables.','Enviar cv','Sky@gmail.com','Accounting',NULL,NULL,14,3,1),
+ (30,'Grupo Corripio','GrupoCorripio.com','Analista de software','Santo Domingo Oeste','Se solicita persona con Experiencia como analista de software, conocimientos de sistemas BPMN y de estructura de datos.','Enviar cv','GrupoCorripio@gmail.com','Programming',NULL,NULL,13,2,1);
+insert into jobs 
+ values(31,'Newtech','newtech.com','Auxiliar de Recursos Humanos','Santo Domingo Este','Trabajar en actualizacion de expedientes de personal.Asistir en funciones genericas del departamento.','Enviar cv','newtech@gmail.com','Accounting',NULL,NULL,5,3,1),
+(32,'Ambev','Ambev.com','Encargado de Marketing Digital','Santo Domingo Oeste','Solicitamos una persona que se encargue de manejar de redes sociales y nuestras marcas en la web.','Enviar cv','Ambev@gmail.com','Marketing',NULL,NULL,9,1,1);
+ insert into jobs values
+(33,'GBH','GBH.com','Desarrollador Web','Santo Domingo Norte','Conocimientos informaticos: Manejo de base de datos y lenguajes de programacion','Enviar cv','gbh@gmail.com','Programming',NULL,NULL,10,2,2),
+(34,'aster','aster.com','Analista de Costos','Santo Domingo Oeste','Realizar cierres mensuales los cuales incluyen: conciliacion de ventas, determinacion de ventas por proyectos.','Enviar cv','aster@gmail.com','Accounting',NULL,NULL,15,3,1),
+(35,'Nestle','Nestle.com','Encargado de Recursos Humanos','Santo Domingo Este','Solicitamos persona responsable de la administracion de estrategias que garantice la mejora de subsistemas de RRHH de la empresa.','Enviar cv','Nestle@gmail.com','Human Resources',NULL,NULL,8,4,2);
+/*Update  jobs set logo = 'Fostertech', Url = 'Fostertech.com' where id = 4;*/
+insert into jobs values
+(36,'GrupoRamos','GrupoRamos.com','Encargado de Reclutamiento','Santo Domingo Norte','Asistir a los reclutadores en las labores de reclutamiento y seleccion del nuevo personal.','Enviar cv','GrupoRamos@gmail.com','Human Resources',NULL,NULL,12,4,1),
+(37,'Nestle','Nestle.com','Analista de Software','Santo Domingo Oeste','Se necesita personal que implemente y actualize los sistemas ERP en las empresas clientes.','Enviar cv','Nestle@gmail.com','Programming',NULL,NULL,3,2,1),
+(38,'Amadita','Amadita.com','Desarrollador de aplicaciones Java','Santo Domingo Oeste','Como desarrollador usted sera responsable del diseño, desarrollo y soporte de las aplicaciones basadas en Java.','Enviar cv','Amadita@gmail.com','Programming',NULL,NULL,11,2,2);
+insert into jobs values
+(39,'Fostertech','Fostertech.com','Secretaria','Santo Domingo Norte','Buen conocimiento y manejo en computacion.,','Enviar cv','Fostertech@gmail.com','Accounting',NULL,NULL,3,3,2),
+(40,'Newtech','Newtech.com','Asistente de Contabilidad','Santo Domingo Oeste','Debe ser estudiante de contabilidad y manejar excel y word.','Enviar cv','Newtech@gmail.com','Accounting',NULL,NULL,3,3,1),
+(41,'Mapfre','Mapfre.com','Asistente de Gestion Humana','Santo Domingo Este','Asistir en funciones del departamento. Proactiva, Dinamica','Enviar cv','Mapfre@gmail.com','Human Resources',NULL,NULL,7,4,2),
+(42,'Ambev','Ambev.com','Analista de Recursos Humanos','Santo Domingo Oeste','Solicitamos persona responsable de brindar en los requerimientos del personal','Enviar cv','Ambev@gmail.com','Human Resources',NULL,NULL,9,4,1),
+(43,'Altice','Altice.com','Auditor Interno','Santo Domingo Norte','Solicitamos persona responsable en la organizacion del asesoramiento, apoyo profesional y tecnico en materias de control interno. ','Enviar cv','Altice@gmail.com','Accounting',NULL,NULL,2,3,1);
+insert into jobs values
+(44,'Sky','Sky.com','Desarrollador Senior','Santo Domingo Oeste','Solicitamos desarrollador capaz de analizar aplicaciones c#,C++,ASPnet.','Enviar cv','Sky@gmail.com','Programming',NULL,NULL,14,2,2),
+(45,'Aster','Aster.com','Community Manager','Santo Domingo Este','Publicar y gestionar el contenido de redes sociales, creando planes estrategicos.','Enviar cv','Aster@gmail.com','Marketing',NULL,NULL,15,1,1);
+insert into jobs values
+(46,'Ikea','Ikea.com','Secretaria','Santo Domingo Norte','Se solicita una secretaria con conocimientos basicos de contabilidad.' ,'Enviar cv','Ikea@gmail.com','Accounting',NULL,NULL,6,3,2),
+(47,'Mapfre','Mapfre.com','Asistente de Contabilidad','Santo Domingo Oeste','Se necesita asistente de contabilidad para laborar Newtech','Enviar cv','Mapfre@gmail.com','Accounting',NULL,NULL,7,3,1);
+insert into jobs values
+(48,'Fostertech','Fostertech.com','Asistente de servicio al cliente','Santo Domingo Norte','Se necesita asistente de servicio al cliente proactiva,dinamica, dedicada','Enviar cv','Fostertech@gmail.com','Accounting',NULL,NULL,3,3,2),
+(49,'Grupo Corripio','GrupoCorripio.com','Asistente de Marketing','Santo Domingo Oeste','Se necesita asistente de marketing, debe dominar los fundamentos básicos del marketing','Enviar cv','GrupoCorripio@gmail.com','Marketing',NULL,NULL,13,1,1),
+(50,'Ambev','Ambev.com','Asistente de Contabilidad','Santo Domingo Norte','Se necesita asistente de contabilidad que registre los libros contables y conciliacion bancaria','Enviar cv','Ambev@gmail.com','Accounting',NULL,NULL,9,3,2);
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(51,'Altice','Altice.com','Encargado de Ventas','Santo Domingo Oeste','Solicitamos persona capaz de administrar las ventas de productos y servicios ofrecida por la empresa.','Enviar cv','Altice@gmail.com','Accounting',NULL,NULL,2,3,2),
+(52,'Viva','Viva.com','Encargado de Marketing ','Santo Domingo Este','Se necesita profesional encargado de promocionar a traves de las redes nuestros productos.','Enviar cv','Viva@gmail.com','Marketing',NULL,NULL,4,1,1);
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(53,'Newtech','Newtech.com','Auxiliar de Recursos Humanos','Santo Domingo Oeste','Brindar soporte en los procesos llevados a cabo en el Dept. de recursos humanos. ','Enviar cv','Newtech@gmail.com','Human Resources',NULL,NULL,5,4,2);
+ insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(54,'Sky','Sky.com','Gerente de Contabilidad','Santo Domingo Norte','Necesitamos profesional en contabilidad que se encargue de los registros contables.','Enviar cv','Sky@gmail.com','Accounting',NULL,NULL,14,3,1),
+ (55,'Grupo Corripio','GrupoCorripio.com','Analista de software','Santo Domingo Oeste','Se solicita persona con Experiencia como analista de software, conocimientos de sistemas BPMN y de estructura de datos.','Enviar cv','GrupoCorripio@gmail.com','Programming',NULL,NULL,13,2,1);
+ insert into jobs 
+ values(56,'Newtech','newtech.com','Auxiliar de Recursos Humanos','Santo Domingo Este','Trabajar en actualizacion de expedientes de personal.Asistir en funciones genericas del departamento.','Enviar cv','newtech@gmail.com','Accounting',NULL,NULL,5,3,1),
+(57,'Ambev','Ambev.com','Encargado de Marketing Digital','Santo Domingo Oeste','Solicitamos una persona que se encargue de manejar de redes sociales y nuestras marcas en la web.','Enviar cv','Ambev@gmail.com','Marketing',NULL,NULL,9,1,1);
+ insert into jobs values
+(58,'GBH','GBH.com','Desarrollador Web','Santo Domingo Norte','Conocimientos informaticos: Manejo de base de datos y lenguajes de programacion','Enviar cv','gbh@gmail.com','Programming',NULL,NULL,10,2,2),
+(59,'aster','aster.com','Analista de Costos','Santo Domingo Oeste','Realizar cierres mensuales los cuales incluyen: conciliacion de ventas, determinacion de ventas por proyectos.','Enviar cv','aster@gmail.com','Accounting',NULL,NULL,15,3,1),
+(60,'Nestle','Nestle.com','Encargado de Recursos Humanos','Santo Domingo Este','Solicitamos persona responsable de la administracion de estrategias que garantice la mejora de subsistemas de RRHH de la empresa.','Enviar cv','Nestle@gmail.com','Human Resources',NULL,NULL,8,4,2);
+/*Update  jobs set logo = 'Fostertech', Url = 'Fostertech.com' where id = 4;*/
+insert into jobs values
+(61,'GrupoRamos','GrupoRamos.com','Encargado de Reclutamiento','Santo Domingo Norte','Asistir a los reclutadores en las labores de reclutamiento y seleccion del nuevo personal.','Enviar cv','GrupoRamos@gmail.com','Human Resources',NULL,NULL,12,4,1),
+(62,'Nestle','Nestle.com','Analista de Software','Santo Domingo Oeste','Se necesita personal que implemente y actualize los sistemas ERP en las empresas clientes.','Enviar cv','Nestle@gmail.com','Programming',NULL,NULL,3,2,1),
+(63,'Amadita','Amadita.com','Desarrollador de aplicaciones Java','Santo Domingo Oeste','Como desarrollador usted sera responsable del diseño, desarrollo y soporte de las aplicaciones basadas en Java.','Enviar cv','Amadita@gmail.com','Programming',NULL,NULL,11,2,2);
+insert into jobs values
+(64,'Fostertech','Fostertech.com','Secretaria','Santo Domingo Norte','Buen conocimiento y manejo en computacion.,','Enviar cv','Fostertech@gmail.com','Accounting',NULL,NULL,3,3,2),
+(65,'Newtech','Newtech.com','Asistente de Contabilidad','Santo Domingo Oeste','Debe ser estudiante de contabilidad y manejar excel y word.','Enviar cv','Newtech@gmail.com','Accounting',NULL,NULL,3,3,1),
+(66,'Mapfre','Mapfre.com','Asistente de Gestion Humana','Santo Domingo Este','Asistir en funciones del departamento. Proactiva, Dinamica','Enviar cv','Mapfre@gmail.com','Human Resources',NULL,NULL,7,4,2),
+(67,'Ambev','Ambev.com','Analista de Recursos Humanos','Santo Domingo Oeste','Solicitamos persona responsable de brindar en los requerimientos del personal','Enviar cv','Ambev@gmail.com','Human Resources',NULL,NULL,9,4,1),
+(68,'Altice','Altice.com','Auditor Interno','Santo Domingo Norte','Solicitamos persona responsable en la organizacion del asesoramiento, apoyo profesional y tecnico en materias de control interno. ','Enviar cv','Altice@gmail.com','Accounting',NULL,NULL,2,3,1);
+insert into jobs values
+(69,'Sky','Sky.com','Desarrollador Senior','Santo Domingo Oeste','Solicitamos desarrollador capaz de analizar aplicaciones c#,C++,ASPnet.','Enviar cv','Sky@gmail.com','Programming',NULL,NULL,14,2,2),
+(70,'Aster','Aster.com','Community Manager','Santo Domingo Este','Publicar y gestionar el contenido de redes sociales, creando planes estrategicos.','Enviar cv','Aster@gmail.com','Marketing',NULL,NULL,15,1,1);
+insert into jobs values
+(71,'Ikea','Ikea.com','Secretaria','Santo Domingo Norte','Se solicita una secretaria con conocimientos basicos de contabilidad.' ,'Enviar cv','Ikea@gmail.com','Accounting',NULL,NULL,6,3,2),
+(72,'Mapfre','Mapfre.com','Asistente de Contabilidad','Santo Domingo Oeste','Se necesita asistente de contabilidad para laborar Mapfre','Enviar cv','Mapfre@gmail.com','Accounting',NULL,NULL,7,3,1);
+insert into jobs values
+(73,'Fostertech','Fostertech.com','Asistente de servicio al cliente','Santo Domingo Norte','Se necesita asistente de servicio al cliente proactiva,dinamica, dedicada','Enviar cv','Fostertech@gmail.com','Accounting',NULL,NULL,3,3,2),
+(74,'Grupo Corripio','GrupoCorripio.com','Asistente de Marketing','Santo Domingo Oeste','Se necesita asistente de marketing, debe dominar los fundamentos básicos del marketing','Enviar cv','GrupoCorripio@gmail.com','Marketing',NULL,NULL,13,1,1),
+(75,'Ambev','Ambev.com','Asistente de Contabilidad','Santo Domingo Norte','Se necesita asistente de contabilidad que registre los libros contables y conciliacion bancaria','Enviar cv','Ambev@gmail.com','Accounting',NULL,NULL,9,3,2);
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(76,'Claro','Claro.com','Técnico de Formación','Santo Domingo Oeste','Buscamos un profesional de formación técnica que dirija el ciclo de formación técnica completo para nuestros empleados.','Enviar cv','Claro@gmail.com','Human Resources',NULL,NULL,1,4,2),
+(77,'Altice','Altice.com','Encargado de Compras ','Santo Domingo Este','Realizar la búsqueda y la negociación mas optima con los proveedores de servicios e insumos que la empresa requiere para poder llevar acabo sus actividades con éxito.','Enviar cv','Altice@gmail.com','Accounting',NULL,NULL,2,3,1);
+insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(78,'Fostertech','Fostertech.com','Analista de Business Intelligence','Santo Domingo Oeste','Se busca profesional que identifique los cambios en las ventas, gastos e ingresos de nuestra compañía. ','Enviar cv','Fostertech@gmail.com','Programming',NULL,NULL,3,2,2);
+ insert into jobs (id,logo, Url, position, address, description, apply, email,job_category,created_at, updated_at, id_company,category_id, workingDay_id)
+ values(79,'Viva','Viva.com','Director Creativo','Santo Domingo Norte','Buscamos un director creativo experimentado que ofrezca a nuestro equipo creativo orientación e ideas para poner en marcha nuevos e increíbles proyectos.','Enviar cv','Viva@gmail.com','Marketing',NULL,NULL,4,1,1),
+ (80,'Newtech','Newtech.com','Asesor de Recursos Humanos','Santo Domingo Oeste','Buscamos un asesor de RR. HH. cualificado para liderar una variedad de proyectos de Recursos Humanos y proporcionar consejos productivos sobre capital humano.','Enviar cv','Newtech@gmail.com','Human Resources',NULL,NULL,5,4,1);
+ insert into jobs 
+ values(81,'Ikea','Ikea.com','Analista Financiero','Santo Domingo Este','Buscamos persona capaz de analizar los diferentes estados financieros de la empresa. ','Enviar cv','Ikea@gmail.com','Accounting',NULL,NULL,6,3,1),
+(82,'Mapfre','Mapfre.com','Programador Frontend','Santo Domingo Oeste','Programador/ desarrollador con experiencia de trabajo con herramientas de visualizacion de datos. Amplia experiencia en el manejo de herramientas de Visualizacion de Datos, especificamente Microsoft Power BI a discutir en la entrevista.','Enviar cv','Mapfre@gmail.com','Programming',NULL,NULL,7,2,1);
+ insert into jobs values
+(83,'Nestle','Nestle.com','Gerente de Proyectos','Santo Domingo Norte','Se solicita Gerente de Proyectos que ofrezca servicios a los distintos donantes, asociados y beneficiarios; asimismo, deberá cumplir y exceder el desempeño y los objetivos de la organización.','Enviar cv','Nestle@gmail.com','Marketing',NULL,NULL,8,1,2),
+(84,'Ambev','Ambev.com','Técnico de Comunicación Interna','Santo Domingo Oeste','Solicitamos personal encargado de Diseñar, planificar e implementar el plan de comunicación interna de nuestra organización.','Enviar cv','Ambev@gmail.com','Human Resources',NULL,NULL,9,4,1),
+(85,'GBH','GBH.com','Auditor Externo','Santo Domingo Este','Buscamos un auditor externo para analizar los estados financieros de organizaciones e informar sobre sus posiciones financieras. Los accionistas dependerán de tus evaluaciones para tomar decisiones fundamentadas.','Enviar cv','gbh@gmail.com','Accounting',NULL,NULL,10,3,2);
+
+Update  jobs set logo = 'Fostertech', Url = 'Fostertech.com' where id = 4;
+
+insert into jobs values
+(86,'Amadita','Amadita.com','Desarrollador Movil','Santo Domingo Norte','Necesitamos un desarrollador capaz de entender las necesidades del cliente y de proporcionar recomendaciones para mejorar las aplicaciones móviles para que cumplan los requisitos y necesidades de sus clientes. ','Enviar cv','Amadita@gmail.com','Programming',NULL,NULL,11,2,1),
+(87,'Grupo Ramos','GrupoRamos.com','Diseñador Gráfico','Santo Domingo Oeste','Estamos buscando a un diseñador gráfico que cree gráficos cautivadores y alineados con los valores de la marca para diversos medios.','Enviar cv','GrupoRamos@gmail.com','Marketing',NULL,NULL,12,1,1),
+(88,'Grupo Corripio','GrupoCorripio.com','Técnico de Selección del Personal','Santo Domingo Oeste','Se solicita Tecnico de seleccion personal que tenga la habilidad de seleccionar la persona idónea para cubrir un determinado puesto de trabajo, haciendo diversas pruebas y entrevistas.','Enviar cv','GrupoCorrripio@gmail.com','Human Resources',NULL,NULL,13,4,2);
+insert into jobs values
+(89,'Sky','Sky.com','Contador General','Santo Domingo Norte','Solicitamos persona capaz de interpretar los activos fijos, inventarios, presupuestos y analiza las formas de minimizar costos operacionales trabaja de la mano con auditoria interna y externa.','Enviar cv','Sky@gmail.com','Accounting',NULL,NULL,14,3,2),
+(90,'Aster','Aster.com','Ingeniero DevOps','Santo Domingo Oeste','Buscamos un ingeniero DevOps para ayudarnos a crear sistemas funcionales que mejoren la experiencia de los clientes.','Enviar cv','Aster@gmail.com','Programming',NULL,NULL,15,2,1),
+(91,'GBH','GBH.com','Community Manager','Santo Domingo Este','Se solicita profesional responsable de construir y administrar la comunidad online y gestionar la identidad y la imagen de nuestra marca, creando y manteniendo relaciones estables y duraderas con nuestros clientes.','Enviar cv','gbh@gmail.com','Marketing',NULL,NULL,10,1,2),
+(92,'Amadita','Amadita.com','Consultor de Reclutamiento','Santo Domingo Oeste','Buscamos consultor que Eencuentre clientes y fomente relaciones a largo plazo. Comprenda los requisitos de los clientes y emplee métodos de reclutamiento para atraer candidatos.','Enviar cv','Amadita@gmail.com','Human Resources',NULL,NULL,11,4,1),
+(93,'Grupo Ramos','GrupoRamos.com','Cajera','Santo Domingo Norte',' Buscamos persona responsable del manejo de caja, recibir efectivo, realizar pagos, mantener reportes diarios de movimientos de caja, comunicarse con clientes y proveedores.','Enviar cv','GrupoRamos@gmail.com','Accounting',NULL,NULL,12,3,1);
+insert into jobs values
+(94,'Sky','Sky.com','Administrador de Sistemas','Santo Domingo Oeste','El Administrador de Sistemas mantendrá, actualizará y dará soporte al software, hardware y redes de los clientes. El Administrador de Sistemas necesita ser capaz de diagnosticar y resolver problemas rápidamente y estar disponible para responder a las solicitudes del servicio de ayuda fuera del horario laboral. ','Enviar cv','Sky@gmail.com','Programming',NULL,NULL,14,2,2),
+(95,'Aster','Aster.com','Content Manager','Santo Domingo Este','Buscamos profesional encargado de coordinar y monitorizar la estrategia de contenido de nuestra marca y nuestro servicio. ','Enviar cv','Aster@gmail.com','Marketing',NULL,NULL,15,1,1);
+insert into jobs values
+(96,'Ambev','Ambev.com','Técnico de nóminas','Santo Domingo Norte',' Necesitamos un Técnico de nóminas confiable para hacerse cargo de este aspecto de nuestro departamento financiero.' ,'Enviar cv','Ambev@gmail.com','Human Resources',NULL,NULL,9,4,2),
+(97,'Grupo Corripio','GrupoCorripio.com','Gerente de Inversiones','Santo Domingo Oeste','Buscamos gerente que tenga el dominio de Administrar, coordinar, dirigir y actualizar los activos de la empresa a través de inventarios periódicos, responsable de establecer políticas y métodos orientados al efectivo y eficaz manejo de inventarios','Enviar cv','GrupoCorripio@gmail.com','Accounting',NULL,NULL,13,3,1);
+insert into jobs values
+(98,'Fostertech','Fostertech.com','Programador 2','Santo Domingo Norte','Estamos buscando un PROGRAMADOR que sea experto en: Desarrollador Developement en PHP Habilidades: Con mas de 5 años de experiencia eh PHP Construcción de API Experto en la función CURL para hacer Scraper de Data Logica en programación.','Enviar cv','Fostertech@gmail.com','Programming',NULL,NULL,3,2,2),
+(99,'Nestlé','Nestle.com','Gerente de Marcas','Santo Domingo Oeste','Buscamos gerente capaz de planificar las estrategias y promociones de mercadeo de las marcas asignada, bajo aprobación del Director Comercial.','Enviar cv','Nestle@gmail.com','Marketing',NULL,NULL,8,1,1),
+(100,'Altice','Altice.com','Programador Backend','Santo Domingo Norte','Programador/desarrollador para crear soluciones de inteligencias de negocios con la capacidadad de extraer data y transformarla en Informacion.
+Debe tener mas de un año de experiencia en Proyectos de BI específicamente en Backend','Enviar cv','Altice@gmail.com','Programming',NULL,NULL,2,2,2);
+
+delete from jobs where id = 4  ;                                        
+
