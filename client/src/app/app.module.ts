@@ -1,3 +1,4 @@
+import { FormComponent } from './form/form.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router';
@@ -14,9 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 
 
-
-const appRoutes: Routes = [
-  {path: 'jobs/id', component:Category1Component}
+/**/
+const routes: Routes = [
+  {path: 'home', component:HomeComponent},
+  {path: 'form', component:FormComponent}
 
 ];
 
@@ -27,6 +29,7 @@ const appRoutes: Routes = [
     JobsComponent,
     NavbarComponent,
     FooterComponent,
+    FormComponent,
     Category1Component,
     VacanteComponent,
     HomeComponent
@@ -34,7 +37,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]

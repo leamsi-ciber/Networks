@@ -1,0 +1,77 @@
+.body{
+    font-family: 'Cinzel', serif;
+
+    /*font-family: 'Oswald', sans-serif;*/
+}
+.container{
+    margin-top: 50px;
+}
+form {
+  position: absolute;
+
+  width: 800px;
+  
+ 
+}
+.form-control{
+    
+    height: 30px;
+    border-color:  #79717f ;
+    display: inline-block;
+    display: block !important; 
+    
+    width: 100% !important; 
+    border-radius: 0 !important; 
+    line-height: 1 !important;
+    
+    
+}
+
+.cat{
+    margin-top: 8px;
+}
+
+#description {
+margin-top: 1px;
+height: 120px;
+}
+
+
+.form-check-input{
+    border-color: #5b267c;
+    
+}
+.col-sm-8 {
+    margin-top: 6px;
+}
+
+h4{
+    color: #460e6a;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 400;
+   
+   
+}
+button{
+   text-align: center;
+   font-size: 16px;
+    background-color: #aa79c9 ;
+    background: -webkit-linear-gradient(left top,  #8339b2
+    ,  #5d277f ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right,  #8339b2
+  ,  #5d277f ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right,  #8339b2
+  ,  #5d277f ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,  #8339b2
+  ,  #5d277f );
+    /*padding: 5px;
+    text-align: justify;
+    border-radius: 28px;
+    width: 90px;*/
+    border: 2px solid  #b674df ;
+    box-shadow: rgb(180, 72, 180);
+    margin-left: 136px;
+   
+  
+}
