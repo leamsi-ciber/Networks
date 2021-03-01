@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
+//Routes Authentification
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
@@ -15,3 +15,7 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::get('user-profile', 'AuthController@userProfile');
 });
+
+//Routes Data
+
+
