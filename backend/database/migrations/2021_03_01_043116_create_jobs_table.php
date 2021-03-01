@@ -15,6 +15,7 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
+            $table->string('Company');
             $table->string('logo',100);
             $table->string('Url', 100);
             $table->string('position',100);
