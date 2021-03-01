@@ -17,5 +17,7 @@ Route::group([
 });
 
 //Routes Data
-
+Route::resource('category', 'CategoryController');
+Route::resource('jobs', 'JobsController');
+Route::resource('category.jobs', 'CategoryJobsController'); 
 
