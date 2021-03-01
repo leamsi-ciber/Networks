@@ -14,8 +14,7 @@ class AddAccountStatusToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedInteger('id_accountStatus');
-            $table->foreign('id_accountStatus')->references('id')->on('account_status');
+            //
         });
     }
 
@@ -27,10 +26,7 @@ class AddAccountStatusToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-          
-                $table->dropForeign(['id_accountStatus']);
-                $table->dropColumn('id_accountStatus');
-         
+            //
         });
     }
 }
