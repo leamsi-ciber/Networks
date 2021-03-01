@@ -1,0 +1,59 @@
+#wrapper {
+    overflow-x: hidden;
+ }
+
+ #img{
+     text-align: center;
+}
+
+#sidebar-wrapper {
+    font-size: 24px;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    background: -webkit-linear-gradient(left top,  #8E73C7
+    ,  darkgrey ); /* For Safari 5.1 to 6.0 /
+  background: -o-linear-gradient(bottom right,  #8339b2
+  ,  #5d277f ); / For Opera 11.1 to 12.0 /
+  background: -moz-linear-gradient(bottom right,  #8339b2
+  ,  #5d277f ); / For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right,  #8339b2
+  ,  darkgrey );
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}

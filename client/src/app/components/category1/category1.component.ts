@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Page } from 'ngx-pagination/dist/pagination-controls.directive';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -9,10 +10,10 @@ import { DataService } from 'src/app/service/data.service';
 export class Category1Component implements OnInit {
 
   category1:any;
+  public page: number;
+  filterpost = '';
 
-  constructor(private dataService:DataService) {
-  
-  }
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
     this.getCategory1Data();
@@ -23,6 +24,5 @@ export class Category1Component implements OnInit {
       this.category1 = res;
     });
   }
-
 
 }
