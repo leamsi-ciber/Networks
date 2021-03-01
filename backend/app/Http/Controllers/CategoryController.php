@@ -101,11 +101,12 @@ class CategoryController extends Controller
      * @param  \App\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(category $id)
     {
         $job=category::findOrFail($id);
         //delete Job
     if($job->delete()){
       return 'Well Done the Category is Eliminated';
     }
+}
 }
