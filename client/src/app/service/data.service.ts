@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
+  
+
   constructor(private httpClient:HttpClient) { }
 
   getData(){
-    return this.httpClient.get('http://127.0.0.1:8000/api/jobs')
+    return this.httpClient.get('http://127.0.0.1:8000/api/jobs/1')
   }
 }

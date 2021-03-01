@@ -21,7 +21,8 @@ const routes: Routes = [
   //{path: '', redirectTo: '/home', pathMatch: 'full'},
  
      {path: 'home', component: HomeComponent},
-     { path: 'form', component: FormComponent}
+     { path: 'form', component: FormComponent},
+     {path: 'jobs/:id/categorias', component: Category1Component}
      
  ];
 
