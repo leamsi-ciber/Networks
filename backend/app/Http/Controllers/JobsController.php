@@ -15,7 +15,8 @@ class JobsController extends Controller
      */
     public function index()
     {
-        //
+        $jobs=Jobs::all();
+        return response()->json($jobs,202);
     }
 
     /**
@@ -47,7 +48,11 @@ class JobsController extends Controller
      */
     public function show(Jobs $jobs)
     {
-        //
+           //get Job by category
+       $jobs=Jobs::orderBy('created_at', 'DESC')->where(['category_id'=>$category ])->paginate(10);
+
+       //return jobs of that category
+        return response()->json($jobs,202);
     }
 
     /**
@@ -79,8 +84,13 @@ class JobsController extends Controller
      * @param  \App\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jobs $jobs)
+    public function destroy(Jobs $idjobs)
     {
-        //
+        $job=Jobs::findOrFail($idjobs);
+        //delete Job
+    if($job->delete()){
+      return 'Well Done the Job is Eliminate';
     }
-}
+    }
+    }
+
