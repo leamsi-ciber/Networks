@@ -17,17 +17,17 @@ h4{
 }
 
 .btn-outline-jesus{
-    background-color: #8E73C7;
-    margin-right: 500px;
+    background-color: #fa70ff83;
+    margin-right: 730px;
 
-      background: -webkit-linear-gradient(left top,  #8E73C7
-    ,  darkgrey ); /* For Safari 5.1 to 6.0 /
+      background: -webkit-linear-gradient(left top,  #8225997e
+    ,  rgb(88, 10, 133) ); /* For Safari 5.1 to 6.0 /
   background: -o-linear-gradient(bottom right,  #8339b2
   ,  #5d277f ); / For Opera 11.1 to 12.0 /
   background: -moz-linear-gradient(bottom right,  #8339b2
   ,  #5d277f ); / For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right,  #8339b2
-  ,  darkgrey );
+  background: linear-gradient(to bottom right,  #331a4185
+  ,  rgba(235, 196, 250, 0.575) );
 }
 .btn-opacidad{
     background: -webkit-linear-gradient(left top,  #b7b3c0
@@ -44,4 +44,8 @@ h4{
 
 .form-control{
     width:300px;
+}
+.lin{
+  margin-left: 230px;
+  margin-right: 230px;
 }

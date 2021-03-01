@@ -10,16 +10,16 @@
 }
 .line{
   background-color: #370961;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
   
   
 }
 .line2{
   
   background-color: #370961;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 .nav-link:hover{
   color: #8E73C7;
@@ -38,7 +38,7 @@
   ,  #851b7778 );
   background: -o-linear-gradient(bottom right,  #7c1bb8
   ,  #22043b );
-  margin-left: 500px;
+  margin-left: 440px;
 
 }
 
