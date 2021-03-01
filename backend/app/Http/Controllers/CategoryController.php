@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(category::all(), 200);
     }
 
     /**
@@ -36,7 +36,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(!$request->get('name'))
+        {
+            return response()->json(['mensaje'=>'Datos Invalidos o Incompletos','codigo'=>'422'],422);
+        }
+        category::create($request->all());
+        return response()->json(['mensaje'=>'La Categoria se ha creado','codigo'=>'201'],201);
     }
 
     /**
@@ -70,7 +75,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        $metodo=$request->method();
+       $category=category::find($id);  
+       if ($metodo==="PATCH"){
+        $name=$request->get('name');
+        if ($name!=null && $name!='') {
+            $category->name=$name;
+        }
+        $category->save();
+        return "Registro editado con PATCH";
+      
+       }
+       $name=$request->get('name');
+       if (!$name) {
+           return "Error";
+       } 
+       $category->name=$name;
+       $category->save();
+       return "Grabado con Put correctamente ";
     }
 
     /**
@@ -81,6 +103,9 @@ class CategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        $job=category::findOrFail($id);
+        //delete Job
+    if($job->delete()){
+      return 'Well Done the Category is Eliminated';
     }
 }
