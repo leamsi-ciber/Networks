@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class IdAccountStatusToUsers extends Migration
+class AddAccountStatusToUsers extends Migration
 {
     /**
      * Run the migrations.
