@@ -15,7 +15,7 @@ class IdAccountStatusToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedInteger('id_accountStatus');
-            $table->foreign('id_accountStatus')->references('id')->on('account_statuses');
+            $table->foreign('id_accountStatus')->references('id')->on('account_status');
         });
     }
 
