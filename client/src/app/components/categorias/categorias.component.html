@@ -1,0 +1,71 @@
+<!-- <br> -->
+<div class="container">
+    <div class="container">
+    <form>
+      <div class="row">
+        <div class="col">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+        </div>
+      </div>
+    </form>
+  </div>  
+  </div>
+  <!-- <br> -->
+
+  <!-- Form -->
+  <form (ngSubmit)= "insertData()">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" class="form-control">
+    </div>
+    <button class="btn btn-dark btn-sm mt-4">Insertar</button>
+  </form>
+  <!-- Form -->
+    <br>
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cat of categorias | paginate: { itemsPerPage: 4, currentPage: page }">
+                  <td>
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">{{ cat.name }}</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="mb-0 text-sm"> <img src="https://img.icons8.com/pastel-glyph/24/000000/edit--v2.png"/> </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="mb-0 text-sm"><img src="https://img.icons8.com/offices/24/000000/delete-sign.png"/></span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  
+  <!-- pagination -->
+  <pagination-controls
+   (pageChange)='page = $event' 
+   previousLabel='Anterior' 
+   nextLabel='Siguiente'>
+  </pagination-controls>

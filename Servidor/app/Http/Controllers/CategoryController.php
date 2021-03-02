@@ -22,7 +22,8 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return response()->json(category::all(), 200);
+        return response()->json(category::all(),202);
+
         //return  "Mostrando las diferentes categorias";
     }
 

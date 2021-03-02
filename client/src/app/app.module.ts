@@ -15,10 +15,14 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { VacanteComponent } from './components/vacante/vacante.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
 
 
 const appRoutes: Routes = [
-  {path: 'vacantes', component:Category1Component},
+  {path: 'vacantes', component:VacanteComponent},
+  {path: 'categoria1', component:Category1Component},
+  {path: 'categorias', component:CategoriasComponent},
   {path: 'Login', component:LoginComponent}
 ];
 
@@ -32,7 +36,9 @@ const appRoutes: Routes = [
     LoginComponent,
     AdminComponent,
     FilterPipe,
-    SidebarComponent
+    SidebarComponent,
+    VacanteComponent,
+    CategoriasComponent
   ],
   imports: [
     BrowserModule,
