@@ -9,12 +9,12 @@ class category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $fillable = [ 
         'name'
     ];
 
 
-
+ 
     protected $hidden = [
          'id',
         'created_at',
