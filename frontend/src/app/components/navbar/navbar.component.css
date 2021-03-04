@@ -38,13 +38,18 @@
     ,  #851b7778 );
     background: -o-linear-gradient(bottom right,  #7c1bb8
     ,  #22043b );
-    margin-left: 440px;
+    margin-left: 360px;
   
   }
-  
+  .btn-li{
+    height: 44px;
+  }
   ul{
     float:left;
   }
   li{
      margin-right: 40px; 
+  }
+  .center{
+    text-align: center;
   }

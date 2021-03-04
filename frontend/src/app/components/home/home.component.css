@@ -44,8 +44,16 @@ opacity: 75%;
 
 .form-control{
   width:300px;
+
 }
 .lin{
 margin-left: 230px;
 margin-right: 230px;
+}
+
+.row{
+  margin-left: 0px;
+}
+.container-lg{
+text-align: center;
 }
