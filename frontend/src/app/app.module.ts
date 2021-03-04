@@ -13,6 +13,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { NavbarLoginComponent } from './components/navbar-login/navbar-login.com
     SigninComponent,
     SignupComponent,
     UserProfileComponent,
-    NavbarLoginComponent
+    NavbarLoginComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
