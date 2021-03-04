@@ -12,6 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AuthInterceptor } from './shared/auth.interceptor';
+import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AuthInterceptor } from './shared/auth.interceptor';
     AppComponent,
     SigninComponent,
     SignupComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    NavbarLoginComponent
   ],
   imports: [
     BrowserModule,
