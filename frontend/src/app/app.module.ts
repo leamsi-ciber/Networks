@@ -15,6 +15,7 @@ import { AuthInterceptor } from './shared/auth.interceptor';
 import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HomeComponent } from './components/home/home.component';
     UserProfileComponent,
     NavbarLoginComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
