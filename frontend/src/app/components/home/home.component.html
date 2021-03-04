@@ -1,14 +1,11 @@
 
 <app-navbar></app-navbar>
-<div class="">
+<div class="container">
   <div class="container">
     <form>
       <div class="row">
         <div class="col">
           <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
-        </div>
-        <div>
-          <button class="btn btn-outline-jesus my-2 my-sm-0" type="submit">Buscar</button>
         </div>
         <!-- <div class="col-2">
           
@@ -16,20 +13,24 @@
         </div> -->
       </div>
     </form>  
-  </div>
-  <hr class="lin">
+ 
+  <hr class="lin" >
   <div class ="container" style="min-height:600px;">
 
+        <app-jobs title="Marketing" categoria="1"></app-jobs>
+        <hr/>
+        <br>
+        <app-jobs title="Programming" categoria="2"></app-jobs>
+        <hr/>
+        <br>
+        <app-jobs title="Accounting" categoria="3"></app-jobs>
+        <hr/>
+        <br>
+        <app-jobs title="Human Resources" categoria="4"></app-jobs>
       
-        <div id="star">
-          <h4><b>MARKETING</b></h4>
-        </div>
-      
-   
-    <!-- <app-jobs></app-jobs> -->
-    <app-category1></app-category1>
-  </div>
-  <hr>
-  <app-footer></app-footer>
-</div>
+      </div>
+      <hr>
+      <app-footer></app-footer>
+    </div>
+    
 

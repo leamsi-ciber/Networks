@@ -16,6 +16,7 @@ import { NavbarLoginComponent } from './components/navbar-login/navbar-login.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { JobsComponent } from './components/jobs/jobs.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarLoginComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,

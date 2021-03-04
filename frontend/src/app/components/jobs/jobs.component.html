@@ -1,0 +1,47 @@
+
+  
+  <div id="star">
+    <h4><b>{{title}}</b></h4>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Ubicacion</th>
+                <th scope="col">Posicion</th>
+                <th scope="col">Empresa</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cat of jobs">
+                <td>
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span  class="mb-0 text-sm">{{ cat.address }}</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">{{ cat.position }}</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">{{ cat.Company }}</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
