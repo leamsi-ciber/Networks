@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -29,13 +31,15 @@ import { JobsComponent } from './components/jobs/jobs.component';
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    JobsComponent
+    JobsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     FormsModule
   ],
   providers: [

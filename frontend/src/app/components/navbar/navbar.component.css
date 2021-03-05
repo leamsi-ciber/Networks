@@ -42,7 +42,8 @@
   
   }
   .btn-li{
-    height: 44px;
+    margin-left: 300px;
+    font-size: 10px;
   }
   ul{
     float:left;
@@ -52,4 +53,9 @@
   }
   .center{
     text-align: center;
+  }
+
+  .btn-lg{
+    margin-left: 340px;
+    font-size: 15px;
   }

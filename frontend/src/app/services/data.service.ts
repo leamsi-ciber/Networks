@@ -13,6 +13,13 @@ export class DataService {
 }
 getData(id:string){
   return this.httpClient.get('http://127.0.0.1:5000/api/jobs/'+id)
-
 }
+getCategory(){
+  return this.httpClient.get('http://127.0.0.1:5000/api/category');
+}
+
+insertData(data){
+  return this.httpClient.post('http://127.0.0.1:5000/api/jobs ', data);
+}
+
 }

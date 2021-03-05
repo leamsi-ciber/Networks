@@ -4,7 +4,44 @@
     <h4><b>{{title}}</b></h4>
   </div>
 
-  <div class="row">
+  <!-- <div class="container">
+    <form>
+      <div class="row">
+        <div class="col-6">
+          <input class="form-control " type="search" placeholder="Buscar" aria-label="Search" [(ngModel)]="filterpost" name="filterpost">
+        </div>
+        <div class="col-2">
+          
+          <a routerLink="/form" routerLinkActive="active-link"> <button  type="button" class="btn btn-opacidad" style="color: #1d162c;"><b>Publicar Vacante</b></button></a>
+        </div> 
+      </div>
+    </form>  
+  </div>  -->
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Posicion</th>
+        <th scope="col">Empresa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of jobs | paginate: { itemsPerPage: 5, currentPage: page } ">
+        <td>
+          {{ cat.address }}
+        </td>
+        <td>
+          {{ cat.position }}
+        </td>
+        <td>
+          {{ cat.Company }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div class="row">
     <div class="col">
       <div class="card shadow">
         <div class="table-responsive">
@@ -14,27 +51,26 @@
                 <th scope="col">Ubicacion</th>
                 <th scope="col">Posicion</th>
                 <th scope="col">Empresa</th>
-                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let cat of jobs">
+              <tr *ngFor="let cat of jobs | paginate: { itemsPerPage: 10, currentPage: page } ">
                 <td>
-                  <div class="media align-items-center">
+                  <div class="media align-items-left">
                     <div class="media-body">
                       <span  class="mb-0 text-sm">{{ cat.address }}</span>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <div class="media align-items-center">
+                  <div class="media align-items-left">
                     <div class="media-body">
                       <span class="mb-0 text-sm">{{ cat.position }}</span>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <div class="media align-items-center">
+                  <div class="media align-items-left">
                     <div class="media-body">
                       <span class="mb-0 text-sm">{{ cat.Company }}</span>
                     </div>
@@ -43,5 +79,11 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
+
+<pagination-controls
+ (pageChange)='page = $event' 
+ previousLabel='Anterior' 
+ nextLabel='Siguiente'>
+</pagination-controls>
 
