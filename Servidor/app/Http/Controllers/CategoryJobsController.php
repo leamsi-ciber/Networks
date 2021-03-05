@@ -21,16 +21,16 @@ class CategoryJobsController extends Controller
     public function index($id)
     {
     
-        $categoria = category::find($id);
+        //$categoria = category::find($id);
         $jobs = Jobs::find($id);
         $data = ['success'=>true,
-                'categoria'=>$categoria,
+                //'categoria'=>$categoria,
                 'jobs'=>$jobs
                ];
-               if(is_null($categoria)){
-                   return response()->json(['message' => 'Category Not Found'], 404);
-               }
-               else if (is_null($jobs)){
+               //if(is_null($categoria)){
+                 //  return response()->json(['message' => 'Category Not Found'], 404);
+              // }
+                if (is_null($jobs)){
                    return response()->json(['message' => 'Job Not Found'], 404);
                }
         return response()->json($data, 200);

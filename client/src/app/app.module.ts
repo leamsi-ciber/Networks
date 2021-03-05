@@ -18,7 +18,8 @@ import { HomeComponent } from './components/home/home.component';
 /**/
 const routes: Routes = [
   {path: 'home', component:HomeComponent},
-  {path: 'form', component:FormComponent}
+  {path: 'form', component:FormComponent},
+  {path: 'form/:id', component:FormComponent}
 
 ];
 

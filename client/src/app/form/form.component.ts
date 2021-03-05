@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './../../service/data.service';
+//import { DataService } from './../../service/data.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class FormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.getVacantesData();
+    //this.getVacantesData();
   }
 
 }

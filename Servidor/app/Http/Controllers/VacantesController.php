@@ -6,7 +6,7 @@ use App\Models\Jobs;
 use App\Models\category;
 use Illuminate\Http\Request;
 
-public function getvacanteeById($id){
+/*public function getvacanteeById($id){
     $vacante = vacante::find($id);
     if(is_null($vacante)) {
         return response()->json(['message' => 'vacantes not Found'], 404)
@@ -15,8 +15,8 @@ public function getvacanteeById($id){
 }
 
 public function addVacante(){
-    
-}
+
+}*/
 
 
 
