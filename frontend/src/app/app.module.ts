@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
+import { VacanteComponent } from './components/vacante/vacante.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { JobsComponent } from './components/jobs/jobs.component';
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    JobsComponent
+    JobsComponent,
+    VacanteComponent
   ],
   imports: [
     BrowserModule,
