@@ -16,7 +16,7 @@
   <form (ngSubmit)= "insertData()">
     <div class="form-group">
       <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" class="form-control">
+      <input type="text" name="nombre" class="form-control" [(ngModel)]="categoria.name">;
     </div>
     <button class="btn btn-dark btn-sm mt-4">Insertar</button>
   </form>

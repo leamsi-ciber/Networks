@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Page } from 'ngx-pagination/dist/pagination-controls.directive';
 import { CategoriasService } from 'src/app/service/categorias.service';
+import { Categoria } from 'src/app/categoria';
 
 @Component({
   selector: 'app-categorias',
@@ -10,6 +11,7 @@ import { CategoriasService } from 'src/app/service/categorias.service';
 export class CategoriasComponent implements OnInit {
 
   categorias:any;
+  categoria = new Categoria();
   public page: number;
 
   constructor(private categoriasService:CategoriasService ) { }
@@ -25,7 +27,9 @@ export class CategoriasComponent implements OnInit {
   }
 
   insertData(){
-    console.log('hello');
+    this.categoriasService.insertData(this.categoria).subscribe(res => {
+      console.log(res);      
+    })
   }
 
 }
